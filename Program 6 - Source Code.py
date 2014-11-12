@@ -1,6 +1,6 @@
 import os
 
-def directory_menu():
+def directory_validate():
     global choice
     while True:
         try:
@@ -27,6 +27,9 @@ def open_files():
             except FileNotFoundError:
                 print("The directory {} is not found.".format(directory))
                 continue
+            print("Wonderful! Your directory was found.")
+            for item in os.listdir():
+                print(item)
             break
 directory_menu()
 open_files()
